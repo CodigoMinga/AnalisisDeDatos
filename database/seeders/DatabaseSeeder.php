@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(ProductTableSeeder::class);
 
+        \App\Models\Sale::factory(10000)->create();
+
+
     }
 }

@@ -22,7 +22,8 @@ class SaledetailFactory extends Factory
     public function definition()
     {
         return [
-            //
+
+
         ];
     }
 }

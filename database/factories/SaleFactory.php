@@ -22,7 +22,10 @@ class SaleFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'created_date' => $this->faker->dateTimeBetween('-3 years','now'),
+            'client_id' => $this->faker->numberBetween(1,1000),
+            'vendor_id' => $this->faker->numberBetween(1,10)
+
         ];
     }
 }
