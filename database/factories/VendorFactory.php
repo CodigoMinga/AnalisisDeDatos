@@ -22,7 +22,9 @@ class VendorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'first_name' => $this->faker->firstName,
+            'last_name' => $this->faker->lastName,
+            'dni' => $this->faker->unique()->numberBetween(15000000,22000000).'-'.$this->faker->numberBetween(1,9),
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class ClientFactory extends Factory
 {
@@ -22,7 +23,9 @@ class ClientFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'first_name' => $this->faker->firstName,
+            'last_name' => $this->faker->lastName,
+            'dni' => $this->faker->unique()->numberBetween(15000000,22000000).'-'.$this->faker->numberBetween(1,9),
         ];
     }
 }
