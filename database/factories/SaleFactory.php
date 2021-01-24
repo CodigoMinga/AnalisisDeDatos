@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Sale;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Console\Command;
 
 class SaleFactory extends Factory
 {
@@ -21,6 +22,7 @@ class SaleFactory extends Factory
      */
     public function definition()
     {
+
         return [
             'created_date' => $this->faker->dateTimeBetween('-3 years','now'),
             'client_id' => $this->faker->numberBetween(1,1000),
