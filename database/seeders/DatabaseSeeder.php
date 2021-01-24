@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
        // \App\Models\User::factory(10)->create();
         \App\Models\Client::factory(1000)->create();
         \App\Models\Vendor::factory(10)->create();
+        //\App\Models\Product::factory(100)->create();
         $this->call(ProductTableSeeder::class);
 
         $mytime = Carbon::now();

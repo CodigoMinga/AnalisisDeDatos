@@ -22,10 +22,13 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+
+        $faker = $this->faker;
+        $faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
         return [
-            'name' => $this->faker->name,
-            'stock' => $this->faker->unique()->safeEmail,
-            'price' => now(),
+            'name' => $this->faker->productName,
+            'stock' => $this->faker->numberBetween(1,10000),
+            'price' => $this->faker->numberBetween(1,40000),
 
         ];
     }
