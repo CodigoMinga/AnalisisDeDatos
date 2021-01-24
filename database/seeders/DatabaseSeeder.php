@@ -29,8 +29,8 @@ class DatabaseSeeder extends Seeder
 
 
         $this->command->info("Iniciando creacion de ventas: ".$mytime->toString());
-        \App\Models\Sale::factory(5000)->create()->each(function ($sale) {
-            \App\Models\Saledetail::factory( mt_rand(1,5))->create(['sale_id'=>$sale->id]);
+        \App\Models\Sale::factory(30000)->create()->each(function ($sale) {
+            \App\Models\Saledetail::factory( mt_rand(1,10))->create(['sale_id'=>$sale->id]);
         }
         );
 
