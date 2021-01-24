@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+
 
 
 class DatabaseSeeder extends Seeder
@@ -21,11 +23,17 @@ class DatabaseSeeder extends Seeder
         \App\Models\Client::factory(1000)->create();
         \App\Models\Vendor::factory(10)->create();
         $this->call(ProductTableSeeder::class);
-        $this->command->info("Iniciando creacion de ventas");
-        \App\Models\Sale::factory(1000)->create()->each(function ($sale) {
-            \App\Models\Saledetail::factory( mt_rand(1,30))->create(['sale_id'=>$sale->id]);
+
+        $mytime = Carbon::now();
+
+
+        $this->command->info("Iniciando creacion de ventas: ".$mytime->toString());
+        \App\Models\Sale::factory(5000)->create()->each(function ($sale) {
+            \App\Models\Saledetail::factory( mt_rand(1,5))->create(['sale_id'=>$sale->id]);
         }
         );
-        $this->command->info("Finalizando creacion de ventas");
+
+        $mytime = Carbon::now();
+        $this->command->info("Finalizando creacion de ventas :".$mytime->toString());
     }
 }
