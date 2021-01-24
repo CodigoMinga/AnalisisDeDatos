@@ -24,7 +24,7 @@ class SaleFactory extends Factory
     {
 
         return [
-            'created_date' => $this->faker->dateTimeBetween('-3 years','now'),
+            'created_date' => $this->faker->dateTimeBetween('-4 years','now'),
             'client_id' => $this->faker->numberBetween(1,1000),
             'vendor_id' => $this->faker->numberBetween(1,10)
 

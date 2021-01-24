@@ -15,7 +15,6 @@ class CreateSaledetailsTable extends Migration
     {
         Schema::create('saledetails', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
 
             $table->bigInteger('sale_id')->unsigned()->nullable();
             $table->foreign('sale_id')->references('id')->on('sales')->onUpdate('RESTRICT')->onDelete('RESTRICT');
